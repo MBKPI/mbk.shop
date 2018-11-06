@@ -14,31 +14,46 @@
 <header>
 <div class="container">
   <div class="content">
-    <?=$this->user['name']?> <?=$this->user['surname']?>
-    <? for($i = 0; $i < count($this->lots); $i++): ?>
-        <div id="productr">
-          <div class="row">
-            <div class="leftinfo">
-              <img src="/uploads/lots/<?=$this->lots[$i]['image']?>" alt="img" id="imgproduct">
-              <div id="info2">
-                  <span><?=$this->lots[$i]['title']?></span>
+    <div class="col-lg-12">
+        <p id="logoprofile" ><a href="/">MBK<small class="text-muted">shop</small></a></p>
+    </div>
+    <div class="advert">
+      <div class="headcaption">
+        <p>Мои Объвления</p>
+
+        <div id="username" class="ml-auto">
+          <?=$this->user['name']?> <?=$this->user['surname']?><span><a href="/logout">(Выйти)</a></span>
+        </div>
+
+      </div>
+
+
+      <? for($i = 0; $i < count($this->lots); $i++): ?>
+          <div id="productr">
+            <div class="row">
+              <div class="leftinfo">
+                <img src="/uploads/lots/<?=$this->lots[$i]['image']?>" alt="img" id="imgproduct">
+                <div id="info2">
+                    <span><?=$this->lots[$i]['title']?></span>
+                </div>
+              </div>
+              <div class="rightinfo ml-auto">
+                <span>Цена</span>
+                <span><?=$this->lots[$i]['price']?> грн</span>
+                <button class="btn" type="button" data-toggle="collapse" data-target="#multiCollapseExample_<?=$i?>" aria-expanded="false" aria-controls="collapseExample">
+                    Подробное описание <i class="fas fa-arrow-down"></i>
+                  </button>
               </div>
             </div>
-            <div class="rightinfo ml-auto">
-              <span>Цена</span>
-              <span><?=$this->lots[$i]['price']?> грн</span>
-              <button class="btn" type="button" data-toggle="collapse" data-target="#multiCollapseExample_<?=$i?>" aria-expanded="false" aria-controls="collapseExample">
-                  Подробное описание <i class="fas fa-arrow-down"></i>
-                </button>
-            </div>
-          </div>
-          <div class="collapse" id="multiCollapseExample_<?=$i?>">
-                <div class=" card-body">
-			  		<?=$this->lots[$i]['about']?>
-                </div>
-            </div>
-		</div>
-		<? endfor; ?>
+            <div class="collapse" id="multiCollapseExample_<?=$i?>">
+                  <div class=" card-body">
+  			  		<?=$this->lots[$i]['about']?>
+                  </div>
+              </div>
+  		</div>
+  		<? endfor; ?>
+    </div>
+
   </div>
 </div>
 </header>

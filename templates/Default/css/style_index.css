@@ -31,6 +31,16 @@ h1{
   transition: 0.4s linear;
   color: green;
 }
+#logoprofile a:hover{
+  color: red;
+  cursor:pointer;
+  transition: 0.5s linear;
+}
+#logoprofile{
+  font-weight: 700;
+  font-family: 'Poor Story', sans-serif;
+  font-size: 64px;
+}
 .avatar{
   background: grey;
   width: 70px;
@@ -131,13 +141,21 @@ h1{
   float: left;
   margin-top: 20px;
 }
-.card{
-
+#username{
+  font-size: 22px;
+  font-family: 'Poor Story', cursive;
 }
-
-
-
-
+.headcaption{
+  display: flex;
+}
+.advert{
+  -webkit-box-shadow: 2px 7px 56px 0px rgba(77,35,35,1);
+-moz-box-shadow: 2px 7px 56px 0px rgba(77,35,35,1);
+box-shadow: 2px 7px 56px 0px rgba(77,35,35,1);
+border: 5px solid transperent;
+padding: 15px;
+border-radius: 15px;
+}
 
 
 
