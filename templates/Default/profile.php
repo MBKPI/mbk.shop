@@ -23,6 +23,7 @@
               <div id="info2">
                   <span><?=$this->lots[$i]['title']?></span>
               </div>
+              DICK
             </div>
             <div class="rightinfo ml-auto">
               <span>Цена</span>
