@@ -16,13 +16,13 @@ $("#backswap").on("click",function(){
     var regForm = $("#form_reg").serialize();
     $.ajax({
         type: 'POST',
-        url: '/action/registration.php',
+        url: '/action/register.action.php',
         data: regForm,
         success: function (result) {
             var res = JSON.parse(result);
             if (res.success == true) {
                 alert(res.text);
-               window.location = "kabinet.php";
+               window.location = "/";
             } else {
                 alert(res.text);
             }
@@ -80,6 +80,3 @@ $("#backswap").on("click",function(){
         });
     });
 });
-
-
-

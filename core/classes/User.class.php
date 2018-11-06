@@ -1,8 +1,12 @@
-<?php 
+<?php
 	define("ROOT", $_SERVER['DOCUMENT_ROOT']);
 	require ROOT."/core/config.php";
 
 	class User {
+
+		public static function valid($value) {
+			return trim(htmlspecialchars($value));
+		}
 
 		public static function get() {
 			$db = new DB();

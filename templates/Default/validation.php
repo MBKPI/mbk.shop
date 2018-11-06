@@ -32,16 +32,17 @@
 				<div class="reg">
 
 				<form id="form_reg" class="mx-auto mt-5"  method="post">
-					<input type="text" name="name" placeholder="Имя и Фамили" required>
+					<input type="text" name="name" placeholder="Имя" required>
+          <input type="text" name="surname" placeholder="Фамилия" required>
 					<input type="email" name="email" placeholder="Почта" required>
 					<input type="password" name="password" size="15" placeholder="Пароль..." required>
-					<input type="text" name="phone"  placeholder="Номер телефона " required>
+					<input type="text" name="phone" placeholder="Номер телефона " required>
 					<button id="regbtn">Зарегестрироваться</button>
 				</form>
 
 				<div id="login"> <button id="swap"><span >Уже бывал тут?</span></button> </div>
 				</div>
-				
+
 				<div class="log">
 				<form  method="post" id="log">
 					<input type="email" name="email" placeholder="Введите email">
