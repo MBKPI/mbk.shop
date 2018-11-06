@@ -1,0 +1,8 @@
+AddDefaultCharset utf-8
+
+RewriteEngine On
+RewriteRule ^validation$	/index.php?page=validation	[L]
+RewriteRule ^logout$	/index.php?page=logout	[L]
+
+RewriteRule ^add$   /index.php?page=add [L]
+RewriteRule ^profile$   /index.php?page=profile [L]

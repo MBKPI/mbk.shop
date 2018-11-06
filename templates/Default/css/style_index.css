@@ -1,0 +1,175 @@
+@import url('https://fonts.googleapis.com/css?family=Poor+Story|Spicy+Rice');
+#plus{
+  font-size: 24px;
+}
+*{
+  padding: 0;
+  margin: 0;
+}
+a{
+  text-decoration: none;
+  color: black;
+}
+a:hover{
+  text-decoration: none;
+  color: black;
+}
+h1{
+  color: red;
+}
+.content{
+  text-align: center;
+}
+#logo{
+  float: left;
+  font-family: 'Poor Story', cursive;
+  font-weight: 600;
+  font-size: 62px;
+}
+#logo:hover{
+  cursor: pointer;
+  transition: 0.4s linear;
+  color: green;
+}
+.avatar{
+  background: grey;
+  width: 70px;
+  height: 70px;
+  border-radius: 50px;
+  margin-top: 15px;
+}
+.fa-user-circle{
+  font-size: 28px;
+}
+.kabinet {
+  float: right;
+  margin:40px;
+
+}
+.zagolovok{
+  margin-top: 15px;
+}
+#profile{
+  background: transparent;
+  border: 0px;
+  font-size: 26px;
+  margin-left: 15px;
+}
+#btn{
+  margin-top: 100px;
+}
+.addorder{
+  width:500px;
+  height: 70px;
+  background: #FFF2B3;
+  border-radius: 25px;
+  border:3px solid red;
+  font-size: 28px;
+  font-weight: 600;
+  color: black;
+}
+.addorder:hover, .addorder:focus{
+  outline: 0;
+}
+.addorder:focus{
+  border:3px solid wheat;
+}
+.search{
+  margin-top: 55px;
+}
+.search input{
+  width: 450px;
+  height: 42px;
+  border: 3px solid #FFF3B7;
+  border-radius: 10px;
+  margin-left: 22px;
+}
+.search input:hover,.search input:focus{
+  outline:0;
+}
+.product{
+  margin-top: 75px;
+}
+#productr{
+  min-height: 100%;
+  width: 100%;
+  background: #FFF2B3;
+  border:5px solid wheat;
+  border-radius: 15px;
+  padding-bottom: 15px;
+  margin-top: 10px;
+}
+
+#imgproduct{
+  float: left;
+  height:120px;
+  padding: 15px;
+  margin-left: 15px;
+  width: 175px;
+}
+.btn{
+  margin-top: 5px;
+  border-radius: 10px;
+}
+.btn:focus i{
+  transform: rotate(180deg);
+}
+.leftinfo{
+ float: left;
+ display: inline-block !important;
+}
+.rightinfo{
+  padding-bottom: 20px;
+  margin-top: 5px;
+  margin-right: 45px;
+}
+.rightinfo span{
+  font-size: 18px;
+  display: block;
+}
+#info2{
+  float: left;
+  margin-top: 20px;
+}
+.card{
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Smartphones (вертикальная и горизонтальная ориентация) ----------- */
+@media  screen and (min-width : 320px) and (max-width : 576px) {
+  .addorder{
+    width: 300px;
+    font-size: 20px;
+  }
+  .fas {
+    display: none;
+  }
+  .search input{
+    width: 270px;
+    height: 42px;
+    border: 3px solid #FFF3B7;
+    border-radius: 10px;
+    margin:0px 10px;
+  }
+}
