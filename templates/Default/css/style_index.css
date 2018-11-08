@@ -146,6 +146,8 @@ h1{
   font-family: 'Poor Story', cursive;
 }
 .headcaption{
+  font-size: 22px;
+  font-family: 'Poor Story', cursive;
   display: flex;
 }
 .advert{
@@ -156,7 +158,22 @@ border: 5px solid transperent;
 padding: 15px;
 border-radius: 15px;
 }
-
+#edit{
+  cursor: pointer;
+}
+.editacount input{
+display: block;
+width: 350px;
+height: 50px;
+margin: auto;
+margin-top: 10px;
+padding-left: 5px;
+border-radius: 15px;
+border:3px solid #F5DEB3;
+}
+.editacount input:focus{
+  outline: 0;
+}
 
 
 
