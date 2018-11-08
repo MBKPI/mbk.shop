@@ -1,10 +1,10 @@
-<?php 
+<?php
 	define("ROOT", $_SERVER['DOCUMENT_ROOT']);
 	require ROOT."/core/config.php";
 
-	$title = trim(htmlspecialchars($_POST['title']));
-    $price = trim(htmlspecialchars($_POST['price']));
-    $about = trim(htmlspecialchars($_POST['about']));
+	$title = User::valid($_POST['title']);
+    $price = User::valid($_POST['price']);
+    $about = User::valid($_POST['about']);
 
     if (User::isLogged() == false) { die(User::jsonAnswer(false, "Вы не вошли в систему.")); }
 
@@ -17,7 +17,7 @@
         $ins_lot->bindParam(":about", $about);
         $ins_lot->bindParam(":price", $price);
         $ins_lot = $ins_lot->execute();
-        
+
         if ($ins_lot == true) {
             die(User::jsonAnswer(true, "Вы успешно опубликовали объявление!"));
         } else {

@@ -2,8 +2,8 @@
 	define("ROOT", $_SERVER['DOCUMENT_ROOT']);
 	require ROOT."/core/config.php";
 
-	$email = trim(htmlspecialchars($_POST['email']));
-	$password = trim(htmlspecialchars($_POST['password']));
+	$email = User::valid($_POST['email']);
+	$password = User::valid($_POST['password']);
 
 	if ($email != "" && $password != "") {
 

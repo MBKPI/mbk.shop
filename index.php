@@ -23,13 +23,13 @@
 				if (User::isLogged() == false) { header("Location: /validation"); }
 				$tpl->setVar("title", $conf_sitename." - Профиль");
 				$tpl->setVar("user", User::get());
-				$tpl->setVar("lots", Lots::get($_SESSION['user_id']));
+				$tpl->setVar("lots", Lots::get(User::getId()));
 				$tpl->load("profile");
 				break;
 			case 'logout':
 				User::logout();
 				break;
-			
+
 			default:
 				$tpl->setVar("title", $conf_sitename);
 				$tpl->setVar("lots", Lots::get());

@@ -2,17 +2,17 @@
   define("ROOT", $_SERVER['DOCUMENT_ROOT']);
   require ROOT."/core/config.php";
 
-  $name = User::valid($name);
-  $surname = User::valid($surname);
-  $email = User::valid($email);
-  $password = User::valid($password);
-  $phone = User::valid($phone);
+  $name = User::valid($_POST['name']);
+  $surname = User::valid($_POST['surname']);
+  $email = User::valid($_POST['email']);
+  $password = User::valid($_POST['password']);
+  $phone = User::valid($_POST['phone']);
 
   if ($name != "" && $surname != "" && $email != "" && $password != "" && $phone != "") {
     $db = new DB();
     $sel_email = $db->conn()->prepare("SELECT * FROM `users` WHERE `email`=:email");
     $sel_email->bindParam(":email", $email);
-    $sel_email = $sel_email->execute();
+    $sel_email->execute();
 
     $sel_email = $sel_email->fetch(PDO::FETCH_ASSOC);
 
@@ -29,7 +29,7 @@
       if ($ins_user == true) {
         $sel_user = $db->conn()->prepare("SELECT * FROM `users` WHERE `email`=:email");
         $sel_user->bindParam(":email", $email);
-        $sel_user = $sel_user->execute();
+        $sel_user->execute();
         $sel_user = $sel_user->fetch(PDO::FETCH_ASSOC);
 
         if ($sel_user['email'] == $email) {

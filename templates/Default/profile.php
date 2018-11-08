@@ -11,6 +11,49 @@
   </head>
   <body>
 
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Редактирование аккаунта</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <form id="editForm" method="post" role="form">
+
+              <div class="form-group">
+                <label for="name">Имя</label>
+                <input type="text" name="name" id="name" class="form-control" placeholder="<?=$this->user['name']?>" >
+              </div>
+              <div class="form-group">
+                <label for="surname">Фамилия</label>
+                <input type="text" name="surname" id="surname" class="form-control" placeholder="<?=$this->user['surname']?>">
+              </div>
+              <div class="form-group">
+                <label for="email">E-Mail</label>
+                <input type="email" name="email" id="email" class="form-control" placeholder="<?=$this->user['email']?>" autocomplete="new-password">
+              </div>
+              <div class="form-group">
+                <label for="phone">Номер телефона</label>
+                <input type="text" name="phone" id="phone" class="form-control" placeholder="<?=$this->user['phone']?>">
+              </div>
+              <div class="form-group">
+                <label for="password">Пароль</label>
+                <input type="password" name="password" id="password" class="form-control" placeholder="Новый пароль" autocomplete="new-password">
+              </div>
+
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Закрыть</button>
+            <button type="button" class="btn btn-primary">Сохранить изменения</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
 <header>
 <div class="container">
   <div class="content">
@@ -25,33 +68,11 @@
           <a id="edit" data-toggle="modal" data-target="#exampleModal" title = "Нажмите для редактирования профиля"><?=$this->user['name']?> <?=$this->user['surname']?></a><span><a href="/logout">(Выйти)</a></span>
         </div>
         <!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Редактирование аккаунта</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        <form class="editacount" action="index.html" method="post">
-          <input type="text" name="editname" placeholder="Измените Имя">
-          <input type="text" name="editpassword" placeholder="Измените пароль">
-        </form>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Закрыть</button>
-        <button type="button" class="btn btn-primary">Сохранить изменения</button>
-      </div>
-    </div>
-  </div>
-</div>
       </div>
 
-
+    <? if ($this->lots != null): ?>
       <? for($i = 0; $i < count($this->lots); $i++): ?>
-          <div id="productr">
+        <div id="productr">
             <div class="row">
               <div class="leftinfo">
                 <img src="/uploads/lots/<?=$this->lots[$i]['image']?>" alt="img" id="imgproduct">
@@ -64,7 +85,8 @@
                 <span><?=$this->lots[$i]['price']?> грн</span>
                 <button class="btn" type="button" data-toggle="collapse" data-target="#multiCollapseExample_<?=$i?>" aria-expanded="false" aria-controls="collapseExample">
                     Подробное описание <i class="fas fa-arrow-down"></i>
-                  </button>
+                  </button><br>
+                  <button type="button" class="btn" onclick="deleteLot(<?=$this->lots[$i]['lot_id']?>);">Удалить</button>
               </div>
             </div>
             <div class="collapse" id="multiCollapseExample_<?=$i?>">
@@ -74,6 +96,9 @@
               </div>
   		</div>
   		<? endfor; ?>
+    <? else: ?>
+      Нет объявлений.
+    <? endif; ?>
     </div>
 
   </div>

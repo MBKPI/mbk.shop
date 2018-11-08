@@ -16,7 +16,7 @@ $("#backswap").on("click",function(){
     var regForm = $("#form_reg").serialize();
     $.ajax({
         type: 'POST',
-        url: '/action/register.action.php',
+        url: '/core/actions/register.action.php',
         data: regForm,
         success: function (result) {
             var res = JSON.parse(result);
@@ -45,9 +45,9 @@ $("#backswap").on("click",function(){
             success: function (result) {
                 var res = JSON.parse(result);
                 if (res.success == true) {
-                window.location = "/";
+                  window.location = "/";
                 } else {
-                    alert(res.text);
+                  alert(res.text);
                 }
             },
             error: function (xhr, code) {
@@ -80,3 +80,23 @@ $("#backswap").on("click",function(){
         });
     });
 });
+
+function deleteLot(id) {
+  $.ajax({
+    type: "POST",
+    url: '/core/actions/deleteLot.action.php',
+    data: "lot_id=" + id,
+    success: function (result) {
+      var res = JSON.parse(result);
+      if (res.success == true) {
+        alert(res.text);
+        window.location = "/profile";
+      } else {
+        alert(res.text);
+      }
+    },
+    error: function (xhr, code) {
+      alert(xhr + code);
+    }
+  });
+}
