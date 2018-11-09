@@ -5,6 +5,7 @@
 	$title = User::valid($_POST['title']);
     $price = User::valid($_POST['price']);
     $about = User::valid($_POST['about']);
+		$
 
     if (User::isLogged() == false) { die(User::jsonAnswer(false, "Вы не вошли в систему.")); }
 
@@ -15,6 +16,7 @@
         $ins_lot->bindParam(":user_id", $_SESSION['user_id']);
         $ins_lot->bindParam(":title", $title);
         $ins_lot->bindParam(":about", $about);
+
         $ins_lot->bindParam(":price", $price);
         $ins_lot = $ins_lot->execute();
 

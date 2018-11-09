@@ -100,7 +100,7 @@
     </div>
 
     <div class="col-md-4 d-flex justify-content-end">
-      <span><a>Админ Панель</a></span>
+      <span id="admin"><a href="/admin">Админ Панель</a></span>
     </div>
   </div>
 

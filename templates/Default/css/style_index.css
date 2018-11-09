@@ -185,7 +185,14 @@ border:3px solid #F5DEB3;
   padding-bottom: 0px;
   font-family: 'Poor Story', cursive;
 }
-
+#admin{
+  transition: 1s;
+  font-family: 'Poor Story', cursive;
+}
+#admin:hover{
+  cursor: pointer;
+  color: green;
+}
 
 
 

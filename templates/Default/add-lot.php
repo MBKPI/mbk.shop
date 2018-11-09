@@ -28,12 +28,32 @@
             <div class="content">
                   <form class="form_add mx-auto " method="post" id="addLotForm">
                     <input type="text" name="title" placeholder="Название товара" required>
-                    <input type="text" name="price" placeholder="Цена" required>
+
+                        <div class="input-group-prepend">
+                          <input name="price" type="text" placeholder="Цена..">
+                          <select class="custom-select" id="inputGroupSelect03">
+                            <option selected>Choose...</option>
+                            <option value="1">$</option>
+                            <option value="2">Грн</option>
+                            <option value="3">€</option>
+                            </select>
+                        </div>
+
                     <select class="" name="feel" placeholder="Состояние">
                       <option>Выберите состояние</option>
                       <option value="by">Б/у</option>
                       <option value="new">Новое</option>
                     </select>
+
+                    <div class="input-group mb-3">
+                      <div class="custom-file">
+                        <input type="file" class="custom-file-input" id="inputGroupFile02">
+                        <label class="custom-file-label" for="inputGroupFile02" aria-describedby="inputGroupFileAddon02">Choose file</label>
+                      </div>
+                      <div class="input-group-append">
+                        <span class="input-group-text" id="inputGroupFileAddon02">Upload</span>
+                      </div>
+                    </div>
                     <textarea name="about" rows="4" cols="35" placeholder=" Описание"></textarea>
                     <button id="addLot" class="add">Добавить Объявление</button>
                   </form>
