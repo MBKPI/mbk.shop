@@ -3,12 +3,12 @@ $(document).ready(function(){
   $("#swap").on("click",function(){
     $(".reg").hide();
     $(".log").show();
-});
+  });
 
-$("#backswap").on("click",function(){
-  $(".reg").hide();
-  $(".log").show();
-});
+  $("#backswap").on("click",function(){
+    $(".reg").hide();
+    $(".log").show();
+  });
 
   $("#regbtn").on('click', function (e) {
     e.preventDefault();

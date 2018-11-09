@@ -1,0 +1,28 @@
+@import url('https://fonts.googleapis.com/css?family=Poor+Story|Spicy+Rice');
+
+.logotype a {
+  font-family: 'Poor Story', cursive;
+  font-weight: 600;
+  font-size: 62px;
+  text-decoration: none;
+  color: black;
+}
+.logotype a:hover {
+  transition: 0.4s linear;
+  color: green;
+}
+
+.profile {
+  font-size: 30px;
+  margin-top: 30px;
+}
+
+.profile a {
+  text-decoration: none;
+  color: black;
+}
+
+.add-button {
+  margin-top: 90px !important;
+  margin: 90px 0;
+}

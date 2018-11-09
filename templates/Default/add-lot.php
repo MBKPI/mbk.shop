@@ -30,7 +30,7 @@
                     <input type="text" name="title" placeholder="Название товара" required>
                     <input type="text" name="price" placeholder="Цена" required>
                     <textarea name="about" rows="4" cols="35" placeholder=" Описание"></textarea>
-                    <button id="addLot">Добавить Объявление</button>
+                    <button id="addLot" class="add">Добавить Объявление</button>
                   </form>
             </div>
         </div>

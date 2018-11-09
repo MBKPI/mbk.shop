@@ -120,3 +120,16 @@ width: 300px;
 height: 10vh;
 display: none;
 }
+.add{
+  font-family: 'Poor Story', cursive;
+  font-weight: 600;
+  margin-top: 10px;
+  padding: 7px;
+  background: transparent;
+  border: 2px solid black;
+  border-radius: 15px;
+}
+.add:hover{
+  border: 2px solid wheat;
+  transition:0.5s linear;
+}
