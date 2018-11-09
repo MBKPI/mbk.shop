@@ -26,9 +26,14 @@
     <section class="registr">
         <div class="cotainer">
             <div class="content">
-                  <form class="form_add mx-auto mt-5" method="post" id="addLotForm">
+                  <form class="form_add mx-auto " method="post" id="addLotForm">
                     <input type="text" name="title" placeholder="Название товара" required>
                     <input type="text" name="price" placeholder="Цена" required>
+                    <select class="" name="feel" placeholder="Состояние">
+                      <option>Выберите состояние</option>
+                      <option value="by">Б/у</option>
+                      <option value="new">Новое</option>
+                    </select>
                     <textarea name="about" rows="4" cols="35" placeholder=" Описание"></textarea>
                     <button id="addLot" class="add">Добавить Объявление</button>
                   </form>

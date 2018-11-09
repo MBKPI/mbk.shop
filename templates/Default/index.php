@@ -88,7 +88,24 @@
   </div>
 </section>
 
+<section class="footer  mt-5">
+    <div class="container">
+  <div class="row align-items-center">
+    <div class="col-md-4 copy">
+        <span>&copy;All rights reserved</span>
+    </div>
 
+    <div class="col-md-4 d-flex justify-content-center">
+        <p id="logo" >MBK<small class="text-muted">shop</small></p>
+    </div>
+
+    <div class="col-md-4 d-flex justify-content-end">
+      <span><a>Админ Панель</a></span>
+    </div>
+  </div>
+
+    </div>
+</section>
 
 
 

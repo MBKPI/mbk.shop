@@ -175,7 +175,16 @@ border:3px solid #F5DEB3;
 .editacount input:focus{
   outline: 0;
 }
-
+.footer{
+  background: grey;
+  max-height: 100%;
+  background: #DDDDDD;
+}
+.copy{
+  font-size: 26px;
+  padding-bottom: 0px;
+  font-family: 'Poor Story', cursive;
+}
 
 
 

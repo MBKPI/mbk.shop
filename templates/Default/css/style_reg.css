@@ -32,7 +32,7 @@ text-align: center;
 #regbtn{
   font-weight: 600;
   background: transparent;
-  border: 2px solid white;
+  border: 2px solid black;
   margin-top: 25px;
   font-size: 18px;
   border-radius: 15px;
@@ -44,7 +44,15 @@ text-align: center;
 }
 #regbtn:hover{
   transition: 1s;
-  border: 2px solid gold;
+  border: 2px solid #2f3542;
+}
+#login button{
+  background: transparent;
+  border:1px solid black;
+  border-radius: 5px;
+  padding: 2px;
+  font-family: 'Poor Story', cursive;
+  margin-top: 5px;
 }
 #form_reg input, #log input{
   width: 90%;
@@ -59,12 +67,14 @@ input:focus, button{
   outline: 0;
 }
 #form_reg{
-  border:3px solid black;
+  border:0px;
   border-radius: 25px;
   padding:25px;
   width: 350px;
   min-height: 100%;
-  background: #C3AFFF;
+  -webkit-box-shadow: 0px 2px 18px 10px rgba(0,0,0,0.75);
+  -moz-box-shadow: 0px 2px 18px 10px rgba(0,0,0,0.75);
+  box-shadow: 0px 2px 18px 10px rgba(0,0,0,0.75);
 }
 
 .form_add input, .form_add select{
@@ -86,12 +96,15 @@ input:focus,textarea:focus, select:focus{
   outline: 0;
 }
 .form_add{
-  border:3px solid black;
+  border:0px;
   border-radius: 25px;
   padding:25px;
   width: 350px;
   min-height: 100%;
-  background: #C3AFFF;
+  /* background: #C3AFFF; */
+  -webkit-box-shadow: 0px 2px 18px 10px rgba(0,0,0,0.75);
+-moz-box-shadow: 0px 2px 18px 10px rgba(0,0,0,0.75);
+box-shadow: 0px 2px 18px 10px rgba(0,0,0,0.75);
 }
 #log{
 text-align: center !important;
@@ -99,10 +112,15 @@ text-align: center !important;
 #log{
  width: 300px;
  margin: auto;
- background: #C3AFFF;
+ -webkit-box-shadow: 0px 2px 18px 10px rgba(0,0,0,0.75);
+ -moz-box-shadow: 0px 2px 18px 10px rgba(0,0,0,0.75);
+ box-shadow: 0px 2px 18px 10px rgba(0,0,0,0.75);
+ border-radius: 15px;
  padding: 25px;
 }
 #logbtn{
+  background: transparent;
+  border:2px solid black;
   margin-top: 10px;
   width: 60%;
   border-radius: 15px;

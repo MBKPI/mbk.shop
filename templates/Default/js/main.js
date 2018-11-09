@@ -5,9 +5,9 @@ $(document).ready(function(){
     $(".log").show();
   });
 
-  $("#backswap").on("click",function(){
-    $(".reg").hide();
-    $(".log").show();
+  $("#swap1").on("click",function(){
+    $(".log").hide();
+    $(".reg").show();
   });
 
   $("#regbtn").on('click', function (e) {

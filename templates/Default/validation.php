@@ -30,8 +30,7 @@
 		<div class="cotainer">
 			<div class="content">
 				<div class="reg">
-
-				<form id="form_reg" class="mx-auto mt-5"  method="post">
+				<form id="form_reg" class="mx-auto mt-2"  method="post">
 					<input type="text" name="name" placeholder="Имя" required>
           <input type="text" name="surname" placeholder="Фамилия" required>
 					<input type="email" name="email" placeholder="Почта" required>
@@ -39,7 +38,6 @@
 					<input type="text" name="phone" placeholder="Номер телефона " required>
 					<button id="regbtn">Зарегестрироваться</button>
 				</form>
-
 				<div id="login"> <button id="swap"><span >Уже бывал тут?</span></button> </div>
 				</div>
 
@@ -49,7 +47,7 @@
 					<input type="password" name="password" placeholder="Введите пароль">
 					<button id="logbtn">Войти</button>
 				</form>
-				<div id="login"> <button id="backswap"><span >Зарегестрироваться</span></button> </div>
+				<div id="login"><button id="swap1"><span >Зарегестрироваться</span></button></div>
 				</div>
 			</div>
 		</div>
