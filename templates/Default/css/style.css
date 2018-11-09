@@ -26,3 +26,11 @@
   margin-top: 90px !important;
   margin: 90px 0;
 }
+
+.count {
+  font-size: 44px;
+}
+
+.bg-count {
+  background: #e9ecef;
+}

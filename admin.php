@@ -25,10 +25,12 @@
 				break;
       case 'lots':
         $tpl->setVar("title", "ADM CP - Все объявления");
+				$tpl->setVar("lots", Admin::getLots());
         $tpl->load("lots");
         break;
 			default:
 				$tpl->setVar("title", $conf_sitename);
+				$tpl->setVar("count", Admin::getCount());
 				$tpl->load("index");
 				break;
 		}

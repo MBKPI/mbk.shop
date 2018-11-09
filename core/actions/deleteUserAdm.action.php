@@ -20,7 +20,7 @@
         $del_user->bindParam(":user_id", $user_id);
         $del_user->execute();
         if ($del_user == true) {
-          die(User::jsonAnswer(true, "Вы успешно удалили объявление."));
+          die(User::jsonAnswer(true, "Вы успешно удалили пользователя."));
         } else {
           die(User::jsonAnswer(false, "Произошла ошибка, повторите попытку позже..."));
         }
@@ -28,7 +28,7 @@
         die(User::jsonAnswer(false, "Нельзя удалить самого себя."));
       }
     } else {
-      die(User::jsonAnswer(false, "Такого объявления не существует."));
+      die(User::jsonAnswer(false, "Такого пользователя не существует."));
     }
   } else {
     die(User::jsonAnswer(false, "Не указан параметр."));

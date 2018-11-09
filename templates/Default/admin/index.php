@@ -8,12 +8,13 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.2/css/all.css" integrity="sha384-/rXc/GQVaYpyDdyxK+ecHPVYJSN9bmVFBvjA/9eOB+pb3F2w2N6fc5qB9Ew5yIns" crossorigin="anonymous">
-
+    <link rel="stylesheet" href="<?=$this->path?>/css/style.css">
     <title><?=$this->title?></title>
   </head>
   <body>
 
   <div class="container">
+
     <div class="row">
       <div class="col-md-12 mt-5">
         <nav class="nav nav-pills flex-column flex-sm-row">
@@ -24,6 +25,29 @@
         </nav>
       </div>
     </div>
+
+    <div class="row">
+      <div class="col-md-12 mt-5">
+
+        <div class="jumbotron">
+          <h1 class="display-4">Добро пожаловать!</h1>
+          <p class="lead">Эта админ-панель предназначена для управления сайтом MBKShop.<br> Вы можете отредактировать, удалить и просмотреть объявления/пользователя.</p>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="row justify-content-between text-dark font-weight-bold">
+      <div class="col-md-4 mt-1 ml-3 bg-count">
+        <p class="text-center count"><?=$this->count['users']?></p>
+        <p class="text-center text-uppercase">Пользователей</p>
+      </div>
+      <div class="col-md-4 mt-1 mr-3 bg-count">
+        <p class="text-center count"><?=$this->count['lots']?></p>
+        <p class="text-center text-uppercase">Объявлений</p>
+      </div>
+    </div>
+
   </div>
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

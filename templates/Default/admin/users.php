@@ -48,6 +48,14 @@
     <div class="row">
       <div class="col-md-12 mt-5">
 
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="/">Главная</a></li>
+            <li class="breadcrumb-item"><a href="/admin">Админ-панель</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Пользователи</li>
+          </ol>
+        </nav>
+
         <div class="table-responsive">
           <table class="table table-hover">
             <thead>
