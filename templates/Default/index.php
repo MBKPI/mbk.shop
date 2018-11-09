@@ -79,6 +79,7 @@
           <div class="collapse" id="multiCollapseExample_<?=$i?>">
                 <div class=" card-body">
 			  		<?=$this->lots[$i]['about']?>
+            <p>Номер телефона: <?=$this->lots[$i]['phone']?></p>
                 </div>
             </div>
 		</div>
@@ -100,7 +101,11 @@
     </div>
 
     <div class="col-md-4 d-flex justify-content-end">
+<<<<<<< HEAD
       <span id="admin"><a href="/admin">Админ Панель</a></span>
+=======
+      <span><? if (User::isAdmin() == true): ?><a href="/admin">Админ-Панель</a><? endif; ?></span>
+>>>>>>> b94c0d4b89b332d2d85e7097e5a043897c6cfab2
     </div>
   </div>
 

@@ -29,6 +29,15 @@
       <div class="col-md-12 mt-5">
 
         <? if ($this->user != null): ?>
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="/">Главная</a></li>
+            <li class="breadcrumb-item"><a href="/admin">Админ-панель</a></li>
+            <li class="breadcrumb-item"><a href="/admin/users">Пользователи</a></li>
+            <li class="breadcrumb-item active" aria-current="page"><?=$this->user['name']?> <?=$this->user['surname']?></li>
+          </ol>
+        </nav>
+
         <form>
           <div class="form-group">
             <label for="name">Имя пользователя</label>

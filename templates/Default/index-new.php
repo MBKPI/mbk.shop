@@ -45,10 +45,10 @@
       <div class="col mt-5">
         <? for($i = 0; $i < count($this->lots); $i++): ?>
         <div class="card mb-3">
-          <img class="card-img-top" src="/uploads/lots/no_image.jpg" width="1149px" height="180px" alt="Card image cap">
+          <img class="card-img-top" src="/uploads/lots/<?=$this->lots[$i]['image']?>" width="1149px" height="180px" alt="Card image cap">
           <div class="card-body">
             <h5 class="card-title"><?=$this->lots[$i]['title']?> <p class="float-right text-muted">Цена: <b><?=$this->lots[$i]['price']?> грн.</b></p></h5>
-            <p class="card-text"><?=$this->lots[$i]['about']?></p>
+            <p class="card-text"><?=$this->lots[$i]['about']?><br>Номер телефона: <?=$this->lots[$i]['phone']?></p>
             <p class="card-text"><small class="text-muted">Опубликовано 3 минуты назад</small></p>
           </div>
         </div>

@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css?family=Poor+Story|Spicy+Rice');
 
+img {
+  object-fit: cover;
+}
+
 .logotype a {
   font-family: 'Poor Story', cursive;
   font-weight: 600;
@@ -33,4 +37,5 @@
 
 .bg-count {
   background: #e9ecef;
+  border-radius: 5px;
 }
