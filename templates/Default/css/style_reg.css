@@ -151,3 +151,6 @@ display: none;
   border: 2px solid wheat;
   transition:0.5s linear;
 }
+.custom-select{
+  padding: 0px;
+}
