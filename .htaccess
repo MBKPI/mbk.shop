@@ -1,8 +1,14 @@
 AddDefaultCharset utf-8
 
 RewriteEngine On
-RewriteRule ^validation$	/index.php?page=validation	[L]
+
+RewriteRule ^register$	/index.php?page=register	[L]
+RewriteRule ^login$	/index.php?page=login	[L]
+RewriteRule ^lostpassword$ /index.php?page=lostpassword [L]
 RewriteRule ^logout$	/index.php?page=logout	[L]
+
+RewriteRule ^lot/(.*).html  /index.php?page=lot&lot_id=$1 [L]
+RewriteRule ^category/(.*)$ /index.php?category=$1  [L]
 
 RewriteRule ^add$   /index.php?page=add [L]
 RewriteRule ^profile$   /index.php?page=profile [L]
@@ -12,3 +18,5 @@ RewriteRule ^admin/users$ /admin.php?page=users [L]
 RewriteRule ^admin/users/edit/(.*)$ /admin.php?page=edit-user&user_id=$1  [L]
 
 RewriteRule ^admin/lots$ /admin.php?page=lots [L]
+
+RewriteRule ^admin/categories$  /admin.php?page=categories  [L]

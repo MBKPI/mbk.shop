@@ -28,6 +28,11 @@
 				$tpl->setVar("lots", Admin::getLots());
         $tpl->load("lots");
         break;
+			case 'categories':
+				$tpl->setVar("title", "ADM CP - Все категории");
+				$tpl->setVar("categories", Category::get());
+				$tpl->load("categories");
+				break;
 			default:
 				$tpl->setVar("title", $conf_sitename);
 				$tpl->setVar("count", Admin::getCount());

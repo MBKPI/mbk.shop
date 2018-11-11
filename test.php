@@ -1,9 +1,9 @@
 <?php
-  define("ROOT", $_SERVER['DOCUMENT_ROOT']);
-  require ROOT."/core/config.php";
 
-  echo '<pre>';
-  print_r(Lots::get());
-  echo '</pre>';
+setlocale(LC_TIME, "ru_RU");
+echo strftime("в %H:%M, %e %B %G");
+
+setlocale(LC_TIME, "ru_RU");
+echo strftime(" по-немецки - %A.\n");
 
 ?>

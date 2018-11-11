@@ -40,9 +40,41 @@
   </nav>
 
   <div class="container">
+
     <div class="row mt-5">
+      <div class="col-md-4 order-md-1">
+
+        <ul class="nav flex-column nav-pills nav-fill">
+          <li class="nav-item">
+            <a class="nav-link" href="/register">Создать аккаунт</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/login">Авторизация</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="/lostpassword">Забыли пароль?</a>
+          </li>
+        </ul>
+
+      </div>
+
+      <div class="col-md-8 order-md-2">
+        <h4 class="mb-3"><i class="fas fa-key"></i> Восстановление аккаунта</h4>
+        <hr class="mb-4">
+        <form>
+
+          <div class="mb-3">
+            <label for="email">Адрес электронной почты</label>
+            <input type="text" class="form-control" id="email" name="email" placeholder="you@example.com" required="">
+          </div>
+
+          <button class="btn btn-success btn-lg btn-block" type="submit">Восстановить</button>
+        </form>
+
+      </div>
 
     </div>
+
   </div>
 
   <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>

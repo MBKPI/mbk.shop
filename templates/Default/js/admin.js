@@ -24,7 +24,6 @@ $("#confirmBtnDelLot").on('click', function (e) {
     success: function (result) {
       var res = JSON.parse(result);
       if (res.success == true) {
-        alert(res.text);
         window.location = "/admin/lots";
       } else {
         alert(res.text);
@@ -46,7 +45,6 @@ $("#confirmBtnDelete").on('click', function (e) {
     success: function (result) {
       var res = JSON.parse(result);
       if (res.success == true) {
-        alert(res.text);
         window.location = "/admin/users";
       } else {
         alert(res.text);

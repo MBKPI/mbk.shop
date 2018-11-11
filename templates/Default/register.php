@@ -40,9 +40,67 @@
   </nav>
 
   <div class="container">
+
     <div class="row mt-5">
+      <div class="col-md-4 order-md-1">
+
+        <ul class="nav flex-column nav-pills nav-fill">
+          <li class="nav-item">
+            <a class="nav-link active" href="/register">Создать аккаунт</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/login">Авторизация</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/lostpassword">Забыли пароль?</a>
+          </li>
+        </ul>
+
+      </div>
+
+      <div class="col-md-8 order-md-2">
+        <h4 class="mb-3"><i class="fas fa-user-plus"></i> Регистрация</h4>
+        <hr class="mb-4">
+        <form id="form_reg">
+          <div class="row">
+            <div class="col-md-6 mb-3">
+              <label for="name">Имя</label>
+              <input type="text" class="form-control" id="name" name="name" required="">
+            </div>
+            <div class="col-md-6 mb-3">
+              <label for="surname">Фамилия</label>
+              <input type="text" class="form-control" id="surname" name="surname" required="">
+            </div>
+          </div>
+
+          <div class="mb-3">
+            <label for="email">Адрес электронной почты</label>
+            <input type="text" class="form-control" id="email" name="email" placeholder="you@example.com" equired="">
+            <small class="text-muted">На него будет отправлено письмо с подтверждением регистрации.</small>
+          </div>
+
+          <div class="row">
+            <div class="col-md-6 mb-3">
+              <label for="password">Пароль</label>
+              <input type="password" class="form-control" id="password" name="password" required="">
+            </div>
+            <div class="col-md-6 mb-3">
+              <label for="r_password">Повторите пароль</label>
+              <input type="password" class="form-control" id="r_password" name="r_password" required="">
+            </div>
+          </div>
+
+          <div class="mb-5">
+            <label for="phone">Номер телефона</label>
+            <input type="text" class="form-control" id="phone" name="phone" placeholder="" equired="">
+          </div>
+          <button id="regbtn" class="btn btn-success btn-lg btn-block" type="submit">Создать аккаунт</button>
+        </form>
+
+      </div>
 
     </div>
+
   </div>
 
   <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>

@@ -59,12 +59,14 @@ $(document).ready(function(){
     $("#addLot").on('click', function (e) {
         e.preventDefault();
 
-        var addForm = $("#addLotForm").serialize();
+        var addForm = new FormData(document.forms.addLot);
 
         $.ajax({
             type: 'POST',
             url: '/core/actions/addLot.action.php',
             data: addForm,
+            contentType: false,
+            processData:false,
             success: function (result) {
                 var res = JSON.parse(result);
                 if (res.success == true) {
@@ -89,7 +91,6 @@ function deleteLot(id) {
     success: function (result) {
       var res = JSON.parse(result);
       if (res.success == true) {
-        alert(res.text);
         window.location = "/profile";
       } else {
         alert(res.text);
