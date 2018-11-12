@@ -39,7 +39,7 @@
           <div class="dropdown-menu  dropdown-menu-right" aria-labelledby="dropdownMenu2">
 
             <a class="dropdown-item" href="/mylots"><i class="fas fa-bars"></i> Мои объявления</a>
-            <a class="dropdown-item" href="/favorites"><i class="far fa-star"></i> Избранное</a>
+            <a class="dropdown-item" href="/favourites"><i class="far fa-star"></i> Избранное</a>
             <a class="dropdown-item" href="/settings"><i class="fas fa-cog"></i> Настройки</a>
             <div class="dropdown-divider"></div>
             <a class="dropdown-item" href="/logout"><i class="fas fa-sign-out-alt"></i> Выйти</a>

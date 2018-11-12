@@ -11,7 +11,9 @@ RewriteRule ^lot/(.*).html  /index.php?page=lot&lot_id=$1 [L]
 RewriteRule ^category/(.*)$ /index.php?category=$1  [L]
 
 RewriteRule ^add$   /index.php?page=add [L]
-RewriteRule ^profile$   /index.php?page=profile [L]
+RewriteRule ^mylots$   /index.php?page=mylots [L]
+RewriteRule ^favourites$  /index.php?page=favourites  [L]
+RewriteRule ^settings$  /index.php?page=settings  [L]
 
 RewriteRule ^admin$ /admin.php [L]
 RewriteRule ^admin/users$ /admin.php?page=users [L]

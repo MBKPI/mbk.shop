@@ -42,6 +42,66 @@
   <div class="container">
     <div class="row mt-5">
 
+      <div class="col-md-10">
+        <h4 class="mb-4">Избранное</h4>
+        <? if ($this->fav_lots != null): ?>
+        <div class="table-responsive">
+          <table class="table table-bordered">
+
+            <caption>Всего объявлений: <?=count($this->fav_lots)?></caption>
+            <thead>
+              <tr>
+                <th scope="col">Изображение</th>
+                <th scope="col">Заголовок</th>
+                <th scope="col">Описание</th>
+                <th scope="col">Действия</th>
+              </tr>
+            </thead>
+            <tbody>
+              <? for ($i = 0; $i < count($this->fav_lots); $i++): ?>
+              <tr>
+                <th scope="row" style="height: 100px;"><img class="img mh-100" src="/uploads/lots/<?=$this->fav_lots[$i]['image']?>" alt=""></th>
+                <td><?=$this->fav_lots[$i]['title']?></td>
+                <td><?=$this->fav_lots[$i]['about']?></td>
+                <td>
+                  <div class="btn-group btn-group-sm" role="group">
+                      <button id="btnGroupDrop1" type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Выберите
+                      </button>
+                      <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
+                        <a class="dropdown-item" href="/lot/<?=$this->fav_lots[$i]['lot_id']?>.html">Просмотреть</a>
+                        <a class="dropdown-item" href="#">Удалить из избранных</a>
+                      </div>
+                    </div>
+                </td>
+              </tr>
+              <? endfor; ?>
+            </tbody>
+          </table>
+        </div>
+        <? else: ?>
+        <hr>
+        <p class="text-center">Объявлений нет.</p>
+        <? endif; ?>
+      </div>
+
+      <div class="col-md-2">
+        <h4 class="mb-4">Навигация</h4>
+        <ul class="nav flex-column nav-pills">
+          <li class="nav-item">
+            <a class="nav-link" href="/mylots">Мои объявления</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="/favourites">Избранное</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/settings">Настройки</a>
+          </li>
+
+        </ul>
+
+      </div>
+
     </div>
   </div>
 

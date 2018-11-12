@@ -32,12 +32,25 @@
 				$tpl->setVar("currency", Currency::getAll());
 				$tpl->load("add-lot");
 				break;
-			case 'profile':
+			case 'mylots':
 				if (User::isLogged() == false) { header("Location: /validation"); }
-				$tpl->setVar("title", $conf_sitename." - Профиль");
+				$tpl->setVar("title", $conf_sitename." - Мои объявления");
 				$tpl->setVar("user", User::get());
-				$tpl->setVar("lots", Lots::get(User::getId()));
-				$tpl->load("profile");
+				$tpl->setVar("lots", Lots::getAllById(User::getId()));
+				$tpl->load("mylots");
+				break;
+			case 'favourites':
+				if (User::isLogged() == false) { header("Location: /validation"); }
+				$tpl->setVar("title", $conf_sitename." - Избранное");
+				$tpl->setVar("user", User::get());
+				$tpl->setVar("fav_lots", Lots::getFavourites(User::getId()));
+				$tpl->load("favourites");
+				break;
+			case 'settings':
+				if (User::isLogged() == false) { header("Location: /validation"); }
+				$tpl->setVar("title", $conf_sitename." - Настройки");
+				$tpl->setVar("user", User::get());
+				$tpl->load("settings");
 				break;
 			case 'logout':
 				User::logout();
