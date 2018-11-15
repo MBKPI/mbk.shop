@@ -20,6 +20,7 @@
         <nav class="nav nav-pills flex-column flex-sm-row">
           <a class="flex-sm-fill text-sm-center nav-link active" href="/admin"><i class="fas fa-home"></i> Главная</a>
           <a class="flex-sm-fill text-sm-center nav-link" href="/admin/users"><i class="fas fa-users"></i> Пользователи</a>
+          <a class="flex-sm-fill text-sm-center nav-link" href="/admin/categories"><i class="fas fa-list-alt"></i> Категории</a>
           <a class="flex-sm-fill text-sm-center nav-link" href="/admin/lots"><i class="fas fa-box"></i> Объявления</a>
           <a class="flex-sm-fill text-sm-center nav-link disabled" href="/logout"><i class="fas fa-sign-out-alt"></i> Выйти</a>
         </nav>

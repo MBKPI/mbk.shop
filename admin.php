@@ -13,7 +13,7 @@
 		switch ($page) {
       case 'users':
         $tpl->setVar("title", "ADM CP - Все пользователи");
-        $tpl->setVar("users", Admin::getUsers());
+        $tpl->setVar("users", User::getAll());
         $tpl->load("users");
         break;
 			case 'edit-user':
@@ -28,9 +28,16 @@
 				$tpl->setVar("lots", Admin::getLots());
         $tpl->load("lots");
         break;
+			case 'edit-lot':
+				$tpl->setVar("title", "ADM CP - Редактирование объявления");
+				$tpl->setVar("user", User::get());
+				$tpl->setVar("users", User::getAll());
+				$tpl->setVar("lot", Lots::getById($_GET['lot_id']));
+				$tpl->load("edit-lot");
+				break;
 			case 'categories':
 				$tpl->setVar("title", "ADM CP - Все категории");
-				$tpl->setVar("categories", Category::get());
+				$tpl->setVar("categories", Category::getAll());
 				$tpl->load("categories");
 				break;
 			default:

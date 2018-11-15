@@ -82,6 +82,7 @@
 
           </div>
       </div>
+      </div>
         <? endfor; ?>
       <? else: ?>
       <div class="col">

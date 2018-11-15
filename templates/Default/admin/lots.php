@@ -39,6 +39,7 @@
         <nav class="nav nav-pills flex-column flex-sm-row">
           <a class="flex-sm-fill text-sm-center nav-link" href="/admin"><i class="fas fa-home"></i> Главная</a>
           <a class="flex-sm-fill text-sm-center nav-link" href="/admin/users"><i class="fas fa-users"></i> Пользователи</a>
+          <a class="flex-sm-fill text-sm-center nav-link" href="/admin/categories"><i class="fas fa-list-alt"></i> Категории</a>
           <a class="flex-sm-fill text-sm-center nav-link active" href="/admin/lots"><i class="fas fa-box"></i> Объявления</a>
           <a class="flex-sm-fill text-sm-center nav-link disabled" href="/logout"><i class="fas fa-sign-out-alt"></i> Выйти</a>
         </nav>
@@ -47,7 +48,6 @@
 
     <div class="row">
       <div class="col-md-12 mt-5">
-
         <nav aria-label="breadcrumb">
           <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="/">Главная</a></li>
@@ -55,7 +55,15 @@
             <li class="breadcrumb-item active" aria-current="page">Объявления</li>
           </ol>
         </nav>
+      </div>
 
+      <div class="col-md-12 mt-2">
+        <div class="d-flex justify-content-between align-items-center">
+          <h4>Найдено объявлений: <?=count($this->lots)?></h4>
+        </div>
+      </div>
+
+      <div class="col-md-12 mt-1">
         <div class="table-responsive">
           <table class="table table-hover">
             <thead>
