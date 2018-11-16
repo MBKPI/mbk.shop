@@ -79,8 +79,8 @@
               <h5 class="card-title"><a class="text-dark" href="/lot/<?=$this->lots[$i]['lot_id']?>.html"><?=$this->lots[$i]['title']?></a></h5>
               <p class="text-muted"><?=$this->lots[$i]['price']?> <?=$this->lots[$i]['currency_detail']['symbol']?></p>
             </div>
-
           </div>
+        </div>
       </div>
       </div>
         <? endfor; ?>

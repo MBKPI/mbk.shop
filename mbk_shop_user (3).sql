@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: 127.0.0.1:3306
--- Время создания: Ноя 11 2018 г., 19:24
+-- Время создания: Ноя 12 2018 г., 11:01
 -- Версия сервера: 5.6.37-log
 -- Версия PHP: 5.5.38
 
@@ -66,6 +66,19 @@ INSERT INTO `currency` (`currency_id`, `name`, `symbol`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Структура таблицы `favourites`
+--
+
+CREATE TABLE `favourites` (
+  `favourites_id` int(11) NOT NULL,
+  `lot_id` int(11) NOT NULL,
+  `user_id` int(11) NOT NULL,
+  `date` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+-- --------------------------------------------------------
+
+--
 -- Структура таблицы `lots`
 --
 
@@ -87,7 +100,7 @@ CREATE TABLE `lots` (
 --
 
 INSERT INTO `lots` (`lot_id`, `user_id`, `title`, `about`, `price`, `currency_id`, `image`, `state`, `category_id`, `date`) VALUES
-(11, 4, 'Lorem ipsum dolor sit amet, consectetur adipisicing elit.', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio iure amet tempore consequatur minima odio vel sit dicta est. Molestiae quos consequatur nulla, blanditiis, cupiditate mollitia est, tempora magni autem perferendis libero reprehenderit inventore. Eos nihil iste placeat doloremque consequatur, voluptatum aperiam, ducimus incidunt sapiente labore tempore magni sit, numquam in sunt deserunt eum. Cupiditate quis et fugiat, doloremque molestiae ipsum distinctio expedita ut nisi quidem sequi debitis consectetur soluta inventore, enim tenetur aspernatur laudantium, aperiam quaerat officiis maxime cum. Libero eligendi ut vel laudantium modi, laboriosam praesentium, ea dolorum earum delectus dolorem amet perspiciatis nobis deleniti autem. Maiores, dicta.', 90, 2, 'cs.png', 'Новый', 7, 'фывфыв');
+(13, 4, 'Кахон', 'Продаю кахон. Отличное состояние.Отличный звук.', 1800, 1, 'image (1).jpg', 'Б/у', 8, 'фывфыв');
 
 -- --------------------------------------------------------
 
@@ -131,6 +144,14 @@ ALTER TABLE `currency`
   ADD PRIMARY KEY (`currency_id`);
 
 --
+-- Индексы таблицы `favourites`
+--
+ALTER TABLE `favourites`
+  ADD PRIMARY KEY (`favourites_id`),
+  ADD KEY `favourites_1` (`lot_id`),
+  ADD KEY `favourites_2` (`user_id`);
+
+--
 -- Индексы таблицы `lots`
 --
 ALTER TABLE `lots`
@@ -160,10 +181,15 @@ ALTER TABLE `categories`
 ALTER TABLE `currency`
   MODIFY `currency_id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
+-- AUTO_INCREMENT для таблицы `favourites`
+--
+ALTER TABLE `favourites`
+  MODIFY `favourites_id` int(11) NOT NULL AUTO_INCREMENT;
+--
 -- AUTO_INCREMENT для таблицы `lots`
 --
 ALTER TABLE `lots`
-  MODIFY `lot_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `lot_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 --
 -- AUTO_INCREMENT для таблицы `users`
 --
@@ -178,6 +204,13 @@ ALTER TABLE `users`
 --
 ALTER TABLE `categories`
   ADD CONSTRAINT `categories_ibfk_1` FOREIGN KEY (`parent_category`) REFERENCES `categories` (`category_id`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Ограничения внешнего ключа таблицы `favourites`
+--
+ALTER TABLE `favourites`
+  ADD CONSTRAINT `favourites_1` FOREIGN KEY (`lot_id`) REFERENCES `lots` (`lot_id`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `favourites_2` FOREIGN KEY (`user_id`) REFERENCES `users` (`user_id`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Ограничения внешнего ключа таблицы `lots`

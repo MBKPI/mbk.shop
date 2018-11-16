@@ -39,11 +39,11 @@
     </div>
 
     <div class="row justify-content-between text-dark font-weight-bold">
-      <div class="col-md-4 mt-1 ml-3 bg-count">
+      <div class="col-md-4 mt-1 bg-count">
         <p class="text-center count"><?=$this->count['users']?></p>
         <p class="text-center text-uppercase">Пользователей</p>
       </div>
-      <div class="col-md-4 mt-1 mr-3 bg-count">
+      <div class="col-md-4 mt-1 bg-count">
         <p class="text-center count"><?=$this->count['lots']?></p>
         <p class="text-center text-uppercase">Объявлений</p>
       </div>
