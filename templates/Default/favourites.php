@@ -14,24 +14,38 @@
 
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
 
-    <a class="navbar-brand" href="#"><i class="fas fa-shopping-basket"></i> MBKShop</a>
+    <a class="navbar-brand" href="/"><i class="fas fa-shopping-basket"></i> MBKShop</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarText">
         <ul class="navbar-nav mr-auto">
-          <li class="nav-item active">
-            <a class="nav-link" href="/">Главная <span class="sr-only">(текущая)</span></a>
+          <li class="nav-item">
+            <a class="nav-link" href="/">Главная</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Features</a>
+            <a class="nav-link" href="/add">Подать объявление</a>
           </li>
+          <? if (User::isAdmin()): ?>
           <li class="nav-item">
-            <a class="nav-link" href="#">Pricing</a>
+            <a class="nav-link" href="/admin">Админ-панель</a>
           </li>
+          <? endif; ?>
         </ul>
         <? if (User::isLogged() == true): ?>
-        <a href="/profile" class="btn btn-outline-light btn-sm">Профиль</a>
+        <div class="dropdown" style="cursor: pointer;">
+          <a class="dropdown-toggle text-white" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <i class="fas fa-user-alt"></i> <?=$this->user['name'].' '.$this->user['surname']?>
+          </a>
+          <div class="dropdown-menu  dropdown-menu-right" aria-labelledby="dropdownMenu2">
+
+            <a class="dropdown-item" href="/mylots"><i class="fas fa-bars"></i> Мои объявления</a>
+            <a class="dropdown-item" href="/favorites"><i class="far fa-star"></i> Избранное</a>
+            <a class="dropdown-item" href="/settings"><i class="fas fa-cog"></i> Настройки</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="/logout"><i class="fas fa-sign-out-alt"></i> Выйти</a>
+          </div>
+        </div>
         <? else:?>
         <a href="/register" class="btn btn-outline-light btn-sm">Создать аккаунт</a>
         <? endif; ?>
@@ -52,7 +66,6 @@
             <thead>
               <tr>
                 <th scope="col">Изображение</th>
-                <th scope="col">Заголовок</th>
                 <th scope="col">Описание</th>
                 <th scope="col">Действия</th>
               </tr>
@@ -60,9 +73,13 @@
             <tbody>
               <? for ($i = 0; $i < count($this->fav_lots); $i++): ?>
               <tr>
-                <th scope="row" style="height: 100px;"><img class="img mh-100" src="/uploads/lots/<?=$this->fav_lots[$i]['image']?>" alt=""></th>
-                <td><?=$this->fav_lots[$i]['title']?></td>
-                <td><?=$this->fav_lots[$i]['about']?></td>
+                <th scope="row" class="text-center"><img  style="height: 50px;" class="img mh-100" src="/uploads/lots/<?=$this->fav_lots[$i]['image']?>" alt=""></th>
+                <td>
+                  <div class="d-flex w-100 justify-content-between">
+                    <a href="/lot/<?=$this->fav_lots[$i]['lot_id']?>.html" target="_blank"><?=$this->fav_lots[$i]['title']?></a>
+                    <small class="text-muted"><?=$this->fav_lots[$i]['price']?> <?=$this->fav_lots[$i]['currency_detail']['symbol']?></small>
+                  </div>
+                </td>
                 <td>
                   <div class="btn-group btn-group-sm" role="group">
                       <button id="btnGroupDrop1" type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -70,7 +87,7 @@
                       </button>
                       <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
                         <a class="dropdown-item" href="/lot/<?=$this->fav_lots[$i]['lot_id']?>.html">Просмотреть</a>
-                        <a class="dropdown-item" href="#">Удалить из избранных</a>
+                        <a class="dropdown-item" onclick="deleteLotFromFavourite(<?=$this->fav_lots[$i]['lot_id']?>);">Удалить из избранных</a>
                       </div>
                     </div>
                 </td>

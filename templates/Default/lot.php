@@ -15,7 +15,7 @@
 
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
 
-    <a class="navbar-brand" href="#"><i class="fas fa-shopping-basket"></i> MBKShop</a>
+    <a class="navbar-brand" href="/"><i class="fas fa-shopping-basket"></i> MBKShop</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -27,9 +27,11 @@
           <li class="nav-item">
             <a class="nav-link" href="/add">Подать объявление</a>
           </li>
+          <? if (User::isAdmin()): ?>
           <li class="nav-item">
-            <a class="nav-link" href="#">Pricing</a>
+            <a class="nav-link" href="/admin">Админ-панель</a>
           </li>
+          <? endif; ?>
         </ul>
         <? if (User::isLogged() == true): ?>
         <div class="dropdown" style="cursor: pointer;">
@@ -60,7 +62,7 @@
         <nav aria-label="breadcrumb">
           <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="/">Главная</a></li>
-            <li class="breadcrumb-item"><a href="/category/<?=$this->lot['category_detail']['name_eng']?>"><?=$this->lot['category_detail']['name']?></a></li>
+            <li class="breadcrumb-item"><a href="/?page=search&category=<?=$this->lot['category_detail']['name_eng']?>"><?=$this->lot['category_detail']['name']?></a></li>
             <li class="breadcrumb-item active" aria-current="page"><?=$this->lot['title']?></li>
           </ol>
         </nav>
@@ -80,10 +82,14 @@
         <p><?=$this->lot['about']?></p>
         <hr>
         <div class="d-flex justify-content-between align-items-center mb-4">
-          <small class="text-muted"><i class="fas fa-eye"></i> Просмотры: 200</small>
+          <small class="text-muted"><i class="fas fa-eye"></i> Просмотры: <?=$this->lot['views']?></small>
           <ul>
             <a href="/share" class="mr-2"><i class="fas fa-share"></i> Поделится</a>
-            <a href="/share"><i class="far fa-star"></i> В избранное</a>
+            <? if (Lots::isFavourite($this->lot['lot_id'])): ?>
+            <button onclick="deleteLotFromFavourite(<?=$this->lot['lot_id']?>);" class="link-fav"><i class="fas fa-star"></i> Убрать из избранных</button>
+            <? else: ?>
+            <button onclick="addLotToFavourite(<?=$this->lot['lot_id']?>);" class="link-fav"><i class="far fa-star"></i> В избранное</button>
+            <? endif; ?>
           </ul>
         </div>
       </div>
@@ -105,7 +111,7 @@
           <li class="list-group-item flex-column align-items-center">
             <div class="d-flex w-100 justify-content-between">
               <span class="mb-1 font-weight-bold">Категория</span>
-              <span><a href="/category/<?=$this->lot['category_detail']['name_eng']?>"><?=$this->lot['category_detail']['name']?></a></span>
+              <span><a href="/?page=search&category=<?=$this->lot['category_detail']['name_eng']?>"><?=$this->lot['category_detail']['name']?></a></span>
             </div>
           </li>
           <li class="list-group-item flex-column align-items-center">
@@ -148,8 +154,9 @@
     <? endif; ?>
   </div>
 
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+  <script type="text/javascript" src="<?=$this->path?>/js/main.js"></script>
 </body>
 </html>

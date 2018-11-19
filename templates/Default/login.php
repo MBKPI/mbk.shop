@@ -14,7 +14,7 @@
 
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
 
-    <a class="navbar-brand" href="#"><i class="fas fa-shopping-basket"></i> MBKShop</a>
+    <a class="navbar-brand" href="/"><i class="fas fa-shopping-basket"></i> MBKShop</a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -24,14 +24,28 @@
             <a class="nav-link" href="/">Главная <span class="sr-only">(текущая)</span></a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Features</a>
+            <a class="nav-link" href="/add">Подать объявление</a>
           </li>
+          <? if (User::isAdmin()): ?>
           <li class="nav-item">
-            <a class="nav-link" href="#">Pricing</a>
+            <a class="nav-link" href="/admin">Админ-панель</a>
           </li>
+          <? endif; ?>
         </ul>
         <? if (User::isLogged() == true): ?>
-        <a href="/profile" class="btn btn-outline-light btn-sm">Профиль</a>
+        <div class="dropdown" style="cursor: pointer;">
+          <a class="dropdown-toggle text-white" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <i class="fas fa-user-alt"></i> <?=$this->user['name'].' '.$this->user['surname']?>
+          </a>
+          <div class="dropdown-menu  dropdown-menu-right" aria-labelledby="dropdownMenu2">
+
+            <a class="dropdown-item" href="/mylots"><i class="fas fa-bars"></i> Мои объявления</a>
+            <a class="dropdown-item" href="/favorites"><i class="far fa-star"></i> Избранное</a>
+            <a class="dropdown-item" href="/settings"><i class="fas fa-cog"></i> Настройки</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="/logout"><i class="fas fa-sign-out-alt"></i> Выйти</a>
+          </div>
+        </div>
         <? else:?>
         <a href="/register" class="btn btn-outline-light btn-sm">Создать аккаунт</a>
         <? endif; ?>
@@ -61,7 +75,7 @@
       <div class="col-md-8 order-md-2">
         <h4 class="mb-3"><i class="fas fa-sign-in-alt"></i> Вход в аккаунт</h4>
         <hr class="mb-4">
-        <form id="log">
+        <form id="log" type="post">
 
           <div class="mb-3">
             <label for="email">Адрес электронной почты</label>
@@ -70,7 +84,7 @@
 
           <div class="mb-5">
             <label for="password">Пароль</label>
-            <input type="text" class="form-control" id="password" name="password" placeholder="" required="">
+            <input type="password" class="form-control" id="password" name="password" placeholder="" required="">
           </div>
 
           <button id="logbtn" class="btn btn-success btn-lg btn-block" type="submit">Войти</button>

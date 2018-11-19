@@ -56,23 +56,28 @@
 				User::logout();
 				break;
 			case 'lot':
+				Lots::viewed($_GET['lot_id']);
 				$lot = Lots::getById($_GET['lot_id']);
 				$tpl->setVar("title", $lot['title']);
 				$tpl->setVar("lot", $lot);
 				$tpl->setVar("user", User::get());
 				$tpl->load("lot");
 				break;
-			default:
-				if ($_GET['category'] != null) {
-					$cat = Category::getByName($_GET['category']);
-					$tpl->setVar("lots", Lots::getByCategory($_GET['category']));
-					$title = "Категория ".$cat['name'];
-				} else {
-					$tpl->setVar("lots", Lots::getAll());
-					$title = $conf_sitename;
-				}
-				$tpl->setVar("title", $title);
+			case 'search':
+				$tpl->setVar("title", "Поиск по запросу");
 				$tpl->setVar("user", User::get());
+				$tpl->setVar("categories", Category::getAll());
+				$tpl->setVar("current_cat", Category::getByName($_GET['category']));
+				$tpl->setVar("lots", Lots::search($_GET['query'], $_GET['category'], $_GET['param']));
+				$tpl->setVar("query", $_GET['query']);
+				$tpl->load("search");
+				break;
+			default:
+				$tpl->setVar("lots", Lots::getAll());
+				$tpl->setVar("top_lots", Lots::getAllByParam("views", 6));
+				$tpl->setVar("title", $conf_sitename);
+				$tpl->setVar("user", User::get());
+				$tpl->setVar("categories", Category::getAll());
 				$tpl->load("index");
 				break;
 		}

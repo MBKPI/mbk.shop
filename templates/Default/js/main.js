@@ -101,3 +101,41 @@ function deleteLot(id) {
     }
   });
 }
+
+function addLotToFavourite(id) {
+  $.ajax({
+    type: "POST",
+    url: '/core/actions/addFavourite.action.php',
+    data: "lot_id=" + id,
+    success: function (result) {
+      var res = JSON.parse(result);
+      if (res.success == true) {
+        document.location.reload(true);
+      } else {
+        alert(res.text);
+      }
+    },
+    error: function (xhr, code) {
+      alert(xhr + code);
+    }
+  });
+}
+
+function deleteLotFromFavourite(id) {
+  $.ajax({
+    type: "POST",
+    url: '/core/actions/deleteFavourite.action.php',
+    data: "lot_id=" + id,
+    success: function (result) {
+      var res = JSON.parse(result);
+      if (res.success == true) {
+        document.location.reload(true);
+      } else {
+        alert(res.text);
+      }
+    },
+    error: function (xhr, code) {
+      alert(xhr + code);
+    }
+  });
+}

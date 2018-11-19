@@ -39,3 +39,20 @@ img {
   background: #e9ecef;
   border-radius: 5px;
 }
+
+.cat-select {
+  border-radius: 0;
+}
+
+.link-fav {
+  border: 0;
+  background: none;
+  color: #007bff;
+  cursor: pointer;
+  padding: 0;
+}
+
+.link-fav:hover {
+  text-decoration: underline;
+  color: #007bbb;
+}

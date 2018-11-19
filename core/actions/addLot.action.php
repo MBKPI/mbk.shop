@@ -19,10 +19,10 @@
 
 			switch ($state) {
 				case 'old': $state = 'Б/у';	break;
-				case 'new': $state = 'Новый';	break;
+				case 'new': $state = 'Новое';	break;
 			}
 
-			$date = "фывфыв";
+			$date = date("d-m-Y, в H:i");
 
 			$db = new DB();
 	    $ins_lot = $db->conn()->prepare("INSERT INTO `lots` (`user_id`, `title`, `about`, `price`, `currency_id`, `image`, `state`, `category_id`, `date`) VALUES (:user_id, :title, :about, :price, :currency_id, :image, :state, :category_id, :dt)");

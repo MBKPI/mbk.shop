@@ -8,7 +8,8 @@ RewriteRule ^lostpassword$ /index.php?page=lostpassword [L]
 RewriteRule ^logout$	/index.php?page=logout	[L]
 
 RewriteRule ^lot/(.*).html  /index.php?page=lot&lot_id=$1 [L]
-RewriteRule ^category/(.*)$ /index.php?category=$1  [L]
+RewriteCond %{QUERY_STRING} query=(.*)&category=(.*)
+RewriteRule ^search/$ /index.php?page=search&query=$1&category=$2 [L]
 
 RewriteRule ^add$   /index.php?page=add [L]
 RewriteRule ^mylots$   /index.php?page=mylots [L]
