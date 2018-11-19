@@ -23,7 +23,7 @@
           </button>
         </div>
         <div class="modal-body">
-          <p>Вы действительно хотите удалить пользователя?</p>
+          <p>Вы действительно хотите удалить категорию?</p>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-dismiss="modal">Нет, оставить</button>
@@ -38,8 +38,8 @@
       <div class="col-md-12 mt-5">
         <nav class="nav nav-pills flex-column flex-sm-row">
           <a class="flex-sm-fill text-sm-center nav-link" href="/admin"><i class="fas fa-home"></i> Главная</a>
-          <a class="flex-sm-fill text-sm-center nav-link active" href="/admin/users"><i class="fas fa-users"></i> Пользователи</a>
-          <a class="flex-sm-fill text-sm-center nav-link" href="/admin/categories"><i class="fas fa-list-alt"></i> Категории</a>
+          <a class="flex-sm-fill text-sm-center nav-link" href="/admin/users"><i class="fas fa-users"></i> Пользователи</a>
+          <a class="flex-sm-fill text-sm-center nav-link active" href="/admin/categories"><i class="fas fa-list-alt"></i> Категории</a>
           <a class="flex-sm-fill text-sm-center nav-link" href="/admin/lots"><i class="fas fa-box"></i> Объявления</a>
           <a class="flex-sm-fill text-sm-center nav-link disabled" href="/logout"><i class="fas fa-sign-out-alt"></i> Выйти</a>
         </nav>
@@ -52,15 +52,15 @@
           <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="/">Главная</a></li>
             <li class="breadcrumb-item"><a href="/admin">Админ-панель</a></li>
-            <li class="breadcrumb-item active" aria-current="page">Пользователи</li>
+            <li class="breadcrumb-item active" aria-current="page">Категории</li>
           </ol>
         </nav>
       </div>
 
       <div class="col-md-12 mt-2">
         <div class="d-flex justify-content-between align-items-center">
-          <h4>Найдено пользователей: <?=count($this->users)?></h4>
-          <a href="/admin/users/add"><i class="fas fa-plus"></i> Добавить пользователя</a>
+          <h4>Найдено категорий: <?=count($this->categories)?></h4>
+          <a href="/admin/categories/add"><i class="fas fa-plus"></i> Добавить категорию</a>
         </div>
       </div>
 
@@ -70,27 +70,23 @@
             <thead>
               <tr>
                 <th scope="col">#</th>
-                <th scope="col">Имя</th>
-                <th scope="col">Фамилия</th>
-                <th scope="col">E-email</th>
-                <th scope="col">Номер телефона</th>
-                <th scope="col">Группа</th>
+                <th scope="col">Название (рус.)</th>
+                <th scope="col">Название (англ.)</th>
+                <th scope="col">Родительская категория</th>
                 <th scope="col">Действия</th>
               </tr>
             </thead>
             <tbody>
-          <? for($i = 0; $i < count($this->users); $i++): ?>
+          <? for($i = 0; $i < count($this->categories); $i++): ?>
               <tr>
-                <th scope="row"><?=$this->users[$i]['user_id']?></th>
-                <td><?=$this->users[$i]['name']?></td>
-                <td><?=$this->users[$i]['surname']?></td>
-                <td><?=$this->users[$i]['email']?></td>
-                <td><?=$this->users[$i]['phone']?></td>
-                <td><?=$this->users[$i]['admin']?></td>
+                <th scope="row"><?=$this->categories[$i]['category_id']?></th>
+                <td><?=$this->categories[$i]['name']?></td>
+                <td><?=$this->categories[$i]['name_eng']?></td>
+                <td><?=$this->categories[$i]['parent_category']?></td>
                 <td>
                   <div class="btn-group btn-group-sm" role="group">
-                    <a class="btn btn-primary" href="/admin/users/edit/<?=$this->users[$i]['user_id']?>">Редактировать</a>
-                    <button class="btn btn-outline-danger" data-toggle="modal" data-target="#confirmDel" data-whatever="<?=$this->users[$i]['user_id']?>">Удалить</button>
+                    <a class="btn btn-primary" href="/admin/categories/edit/<?=$this->categories[$i]['category_id']?>">Редактировать</a>
+                    <button class="btn btn-outline-danger" data-toggle="modal" data-target="#confirmDel" data-whatever="<?=$this->categories[$i]['category_id']?>">Удалить</button>
                   </div>
                 </td>
               </tr>
