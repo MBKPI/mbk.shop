@@ -40,6 +40,17 @@
 				$tpl->setVar("categories", Category::getAll());
 				$tpl->load("categories");
 				break;
+			case 'add-category':
+				$tpl->setVar("title", "ADM CP - Добавление категории");
+				$tpl->setVar("categories", Category::getAll());
+				$tpl->load("add-category");
+				break;
+			case 'edit-category':
+				$tpl->setVar("title", "ADM CP - Редактирование категории");
+				$tpl->setVar("categories", Category::getAll());
+				$tpl->setVar("category", Category::getById($_GET['cat_id']));
+				$tpl->load("edit-category");
+				break;
 			default:
 				$tpl->setVar("title", $conf_sitename);
 				$tpl->setVar("count", Admin::getCount());

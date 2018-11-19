@@ -56,3 +56,26 @@ $("#confirmBtnDelete").on('click', function (e) {
   });
   user_id = null;
 });
+
+$("#addCategoryBtn").on('click', function (e) {
+  e.preventDefault();
+  var form = $("#add-category").serialize();
+
+  $.ajax({
+    url: '/core/actions/addCategoryAdm.action.php',
+    type: 'POST',
+    data: form,
+    success: function (result) {
+      var res = JSON.parse(result);
+      if (res.success == true) {
+        window.location = "/admin/categories";
+      } else {
+        alert(res.text);
+      }
+    },
+    error: function (xhr, code) {
+      alert(xhr + code);
+    }
+  });
+  user_id = null;
+});
